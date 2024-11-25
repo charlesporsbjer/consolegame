@@ -10,3 +10,7 @@ When you are done with a feature make a merge request and it will be reviewed by
 If the feature passes review it will be merged with the dev branch.
 
 The same goes for bugfix branches and other branches.
+
+In general you should not approve your own merge request, but for very minor fixes and readme's, it's generally fine.
+
+If you are using Visual Studio Code as your developing environment it is recommended you install the Git Extension pack.
