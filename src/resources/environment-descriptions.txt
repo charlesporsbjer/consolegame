@@ -1,0 +1,12 @@
+This file might contain text describing the players current mileu. 
+
+Please note that some of these can divided into describing the time-of-day while others describe the visual environment.
+
+Examples: 
+
+”You arrive at the market in <town>. Nobody is outside and all you hear are some drunkards making noise a few blocks away. 
+It’s dark outside and aside from a some dim lights coming from a few windows, only the moon lights your way.”
+
+”Among your party you hear growling stomaches. <rand(partyMember)> looks as if he’s/she's about to fall asleep walking. 
+We really ought to find a place to sleep soon, says <rand(partymember)>.”
+
