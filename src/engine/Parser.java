@@ -1,58 +1,89 @@
-/* Parser Class
+/* 
+ * The Parser class is responsible for handling user input in the game.
+ * It performs the following tasks:
+ * 
+ * 1. Accepts a string of input from the user.
+ * 2. Splits the input into individual tokens (words).
+ * 3. Identifies the main command (e.g., "GO", "PUT", etc.) by checking the tokens against a list of known command synonyms.
+ * 4. Extracts the command-specific arguments (e.g., direction, items, etc.) from the remaining tokens.
+ * 5. Delegates the command execution to the CommandExecutor class, passing the identified command and its arguments.
+ * 
+ */
 
-The parser should:
-    Accept a string input from the player.
-    Split the input into actionable parts (e.g., command and arguments).
-    Validate the command against a list of acceptable commands.
-    Return a result or trigger the corresponding action. 
-
-    */
 
     import java.util.*;
 
     public class Parser {
-        // Synonyms for commands
-        private static final Map<String, String> synonyms = Map.of(
-            "WALK", "GO",
-            "MOVE", "GO",
-            "LOOK AROUND", "LOOK"
-        );
     
-        // Resolve synonyms to canonical commands
-        private static String resolveSynonym(String command) {
-            return synonyms.getOrDefault(command.toUpperCase(), command.toUpperCase());
+        private CommandSynonyms commandSynonyms;
+        private CommandExecutor commandExecutor;
+    
+        public Parser() {
+            commandSynonyms = new CommandSynonyms();
+            commandExecutor = new CommandExecutor();
         }
     
-        // Validate if a command is valid
-        public static boolean isValidCommand(String command) {
-            try {
-                Command.valueOf(command.toUpperCase());
-                return true;
-            } catch (IllegalArgumentException e) {
-                return false;
-            }
-        }
+        // Method to parse user input and execute the corresponding commandg
+        public void parseInput(String userInput) {
+            // Step 1: Tokenize user input into words
+            List<String> tokens = Arrays.asList(userInput.split("\\s+"));
     
-        // Parse user input into command and arguments
-        public static ParsedCommand parse(String userInput) {
-            userInput = userInput.trim();
-            String[] parts = userInput.split("\\s+", 2);
-            String command = resolveSynonym(parts[0]);
-            String arguments = parts.length > 1 ? parts[1] : "";
+            // Step 2: Get the main command from the tokens
+            String command = CommandSynonyms.getCommandFromTokens(tokens);
     
-            if (!isValidCommand(command)) {
-                System.out.println("Error: Invalid command. Type 'help' for valid commands.");
-                return null;
+            if (command == null) {
+                System.out.println("I don't understand that command.");
+                return;
             }
     
-            return new ParsedCommand(command, arguments);
+            // Step 3: Identify command-specific arguments (e.g., object names, directions)
+            List<String> arguments = getArgumentsForCommand(command, tokens);
+    
+            // Step 4: Execute the command based on identified command and arguments
+            executeCommand(command, arguments);
         }
     
-        // Generate help text
-        public static void printHelp() {
-            System.out.println("Available commands:");
-            for (Command cmd : Command.values()) {
-                System.out.println("- " + cmd.toString().toLowerCase());
+        // Helper method to extract command arguments from the user input
+        private List<String> getArgumentsForCommand(String command, List<String> tokens) {
+            List<String> arguments = new ArrayList<>();
+    
+            // We'll consider everything after the command as arguments (simplified logic)
+            boolean commandFound = false;
+            for (String token : tokens) {
+                if (commandFound) {
+                    arguments.add(token);
+                } else if (CommandSynonyms.isCommandSynonym(command, token)) {
+                    commandFound = true;
+                }
+            }
+    
+            return arguments;
+        }
+    
+        // Helper method to delegate command execution to CommandExecutor
+        private void executeCommand(String command, List<String> arguments) {
+            switch (command) {
+                case "GO":
+                    commandExecutor.executeMoveCommand(arguments);
+                    break;
+                case "ASCEND":
+                    commandExecutor.executeAscendCommand(arguments);
+                    break;
+                case "DESCEND":
+                    commandExecutor.executeDescendCommand(arguments);
+                    break;
+                case "PUT":
+                    commandExecutor.executePutCommand(arguments);
+                    break;
+                case "TAKE":
+                    commandExecutor.executeTakeCommand(arguments);
+                    break;
+                case "LOOK":
+                    commandExecutor.executeLookCommand(arguments);
+                    break;
+                default:
+                    System.out.println("Command not recognized.");
+                    break;
             }
         }
     }
