@@ -1,4 +1,4 @@
-/* 
+package engine;/*
  * This class manages the synonyms for various game commands and provides functionality to 
  * parse user input for recognized commands. It uses a `Map` to associate each command with 
  * a set of synonyms, allowing the user to type commands in various forms (e.g., "go", "move", 
@@ -22,24 +22,32 @@ public class CommandSynonyms {
         /* MOVEMENTS */
         
         // Synonyms for the "GO" command
-        commandSynonyms.put("GO", new HashSet<>(Arrays.asList("go", "walk", "travel", "head", "venture", "move", "advance", "depart", "wander", "stride", "march", "trek", "hike", "pace")))
+        commandSynonyms.put("GO", new HashSet<>(Arrays.asList("go", "walk", "travel",
+                "head", "venture", "move", "advance", "depart", "wander", "stride",
+                "march", "trek", "hike", "pace")));
     
         // Synonyms for the "ASCEND" command
-        commandSynonyms.put("ASCEND", new HashSet<>(Arrays.asList("climb", "ascend", "scale", "clamber", "scramble", "mount", "up")));
+        commandSynonyms.put("ASCEND", new HashSet<>(Arrays.asList("climb", "ascend", "scale",
+                "clamber", "scramble", "mount", "up")));
 
         // Synonyms for the "DESCEND" command
-        commandSynonyms.put("DESCEND", new HashSet<>(Arrays.asList("descend", "down", "drop", "decline", "sink", "fall")));
+        commandSynonyms.put("DESCEND", new HashSet<>(Arrays.asList("descend", "down", "drop",
+                "decline", "sink", "fall")));
         
         /* ACTIONS */
 
         // Synonyms for the "PUT" command
-        commandSynonyms.put("PUT", new HashSet<>(Arrays.asList("put", "store", "place", "deposit", "stow", "stash")));
+        commandSynonyms.put("PUT", new HashSet<>(Arrays.asList("put", "store", "place", "deposit",
+                "stow", "stash")));
 
         // Synonyms for the "TAKE" command
-        commandSynonyms.put("TAKE", new HashSet<>(Arrays.asList("take", "get", "grab", "seize", "collect", "fetch", "pick up", "remove")));
+        commandSynonyms.put("TAKE", new HashSet<>(Arrays.asList("take", "get", "grab",
+                "seize", "collect", "fetch", "pick up", "remove")));
 
         // Synonyms for the "LOOK" command
-        commandSynonyms.put("LOOK", new HashSet<>(Arrays.asList("look", "examine", "check", "view", "peek", "peer", "watch", "observe", "spot", "scan", "inspect", "study", "analyze", "investigate")));
+        commandSynonyms.put("LOOK", new HashSet<>(Arrays.asList("look", "examine", "check",
+                "view", "peek", "peer", "watch", "observe", "spot", "scan", "inspect", "study",
+                "analyze", "investigate")));
         
     }
 

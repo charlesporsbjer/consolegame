@@ -10,7 +10,8 @@
  * 
  */
 
-
+    import engine.CommandSynonyms;
+    import engine.CommandExecutor;
     import java.util.*;
 
     public class Parser {
