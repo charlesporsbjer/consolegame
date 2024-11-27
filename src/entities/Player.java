@@ -1,5 +1,5 @@
 package entities;
-import resources.Direction;
+import engine.Direction;
 import resources.Room;
 
 public class Player {

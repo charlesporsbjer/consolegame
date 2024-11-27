@@ -2,6 +2,7 @@ package resources;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import engine.Direction;
 
 public class Room {
     private HashMap<Direction, Room> exits;
