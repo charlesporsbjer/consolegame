@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e2af364-5ce9-4680-99f6-b88269fdcac9" name="Changes" comment="added enum class Direction">
-      <change beforePath="$PROJECT_DIR$/src/engine/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/CommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/CommandSynonyms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/CommandSynonyms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Parser.java" afterDir="false" />
-    </list>
+    <list default="true" id="4e2af364-5ce9-4680-99f6-b88269fdcac9" name="Changes" comment="added enum class Direction" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,20 +59,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="consolegame" />
@@ -115,6 +111,7 @@
       <workItem from="1732717681437" duration="210000" />
       <workItem from="1732717916578" duration="60000" />
       <workItem from="1732717983867" duration="18000" />
+      <workItem from="1732718077743" duration="100000" />
     </task>
     <task id="LOCAL-00001" summary="added enum class Direction">
       <option name="closed" value="true" />
@@ -149,5 +146,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added enum class Direction" />
     <option name="LAST_COMMIT_MESSAGE" value="added enum class Direction" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/resources/Room.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
