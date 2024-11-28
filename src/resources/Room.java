@@ -1,5 +1,6 @@
 package resources;
 
+import engine.Direction;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -9,7 +10,7 @@ public class Room {
     private String name;
 
     public Room(String name){
-        exits = new HashMap<Direction, Room>();
+        exits = new HashMap<>();
         this.name = name;
     }
 
